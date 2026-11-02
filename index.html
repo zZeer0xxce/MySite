@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d12">
+<meta name="description" content="Портфолио разработчика zZeer0xxce — проекты, эксперименты и полезные загрузки.">
+<title>zZeer0xxce — Developer Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#090d12;--panel:#101720;--panel2:#121d27;--line:#23313d;--text:#edf5f7;--muted:#8b9aa5;--mint:#7cf7c5;--cyan:#70d9f4;--mono:'DM Mono',monospace;--sans:'Manrope',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 75% 8%,#12352e55,transparent 35%),radial-gradient(ellipse at 8% 45%,#142b3b55,transparent 32%)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;background-image:linear-gradient(#8cb3bd12 1px,transparent 1px),linear-gradient(90deg,#8cb3bd12 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0c}
+.logo{font-family:var(--mono);font-size:17px;font-weight:500;letter-spacing:-1px}.logo b{color:var(--mint)}nav{display:flex;gap:30px;color:var(--muted);font-size:13px}nav a:hover{color:var(--mint)}
+.nav-cta,.button{border:1px solid #7cf7c555;background:#7cf7c510;color:var(--mint);padding:11px 16px;border-radius:8px;font-size:12px;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:9px}.nav-cta:hover,.button:hover{background:#7cf7c51e;border-color:var(--mint);transform:translateY(-2px)}
+.hero{min-height:630px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px;padding:80px 0 95px}
+.eyebrow{font:12px var(--mono);color:var(--mint);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:10px}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint)}
+h1{font-size:clamp(48px,6.4vw,76px);line-height:1.04;letter-spacing:-4px;margin:22px 0 20px;font-weight:800}h1 span{color:var(--mint)}.lead{max-width:520px;color:var(--muted);font-size:16px;line-height:1.85}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.button.primary{background:var(--mint);color:#08120f;border-color:var(--mint)}.button.secondary{color:var(--text);border-color:var(--line);background:#ffffff05}
+.meta{display:flex;gap:25px;margin-top:45px;color:var(--muted);font:11px var(--mono)}.meta span:before{content:"↗";color:var(--mint);margin-right:8px}
+.terminal{border:1px solid #31434a;border-radius:14px;background:#0b1218eF;box-shadow:0 25px 90px #0008,0 0 60px #7cf7c50b;overflow:hidden;transform:rotate(1.5deg)}
+.term-top{height:44px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 15px;gap:7px;color:var(--muted);font:11px var(--mono)}.traffic{width:8px;height:8px;border-radius:50%;background:#f06d6d}.traffic:nth-child(2){background:#e9bd65}.traffic:nth-child(3){background:#70d9a2}.term-title{margin-left:auto}
+.term-body{padding:27px 25px 31px;font:12px/2 var(--mono);color:#a9bbc4}.prompt{color:var(--mint)}.code-blue{color:var(--cyan)}.code-white{color:#edf5f7}.code-muted{color:#657780}.cursor{display:inline-block;width:7px;height:14px;background:var(--mint);vertical-align:middle;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+.term-status{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 16px;color:#71848e;font:10px var(--mono)}
+section{padding:72px 0}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}.kicker{font:11px var(--mono);color:var(--mint);letter-spacing:1.4px}.section-head h2{font-size:34px;letter-spacing:-1.5px;margin:9px 0 0}.section-note{font-size:12px;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{background:linear-gradient(145deg,#121c25,#0d141b);border:1px solid var(--line);border-radius:13px;padding:22px;min-height:260px;display:flex;flex-direction:column;transition:.25s;position:relative;overflow:hidden}.project:hover{transform:translateY(-5px);border-color:#7cf7c566}.project:after{content:"";position:absolute;width:150px;height:150px;right:-80px;top:-80px;background:var(--glow,#7cf7c5);filter:blur(85px);opacity:.16}
+.project-top{display:flex;justify-content:space-between;align-items:center}.project-icon{width:42px;height:42px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mint);font:18px var(--mono);background:#ffffff06}.status{font:10px var(--mono);color:var(--mint);border:1px solid #7cf7c533;padding:5px 8px;border-radius:30px}.status.planned{color:#d8b77a;border-color:#d8b77a44}
+.project h3{font-size:20px;margin:24px 0 9px}.project p{font-size:12px;line-height:1.75;color:var(--muted);margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:19px}.tags span{font:10px var(--mono);padding:5px 8px;border-radius:5px;background:#ffffff08;color:#a9bbc4}.project-link{margin-top:auto;padding-top:22px;color:var(--mint);font:11px var(--mono)}
+.downloads{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.download-main,.download-side{border:1px solid var(--line);border-radius:13px;background:linear-gradient(130deg,#14231f,#101720);padding:27px}.download-main{display:flex;justify-content:space-between;align-items:center;gap:20px}.download-main h3{font-size:21px;margin:8px 0}.download-main p,.download-side p{color:var(--muted);font-size:12px;line-height:1.7;margin:0}.download-side{background:var(--panel)}.download-side h3{font-size:16px;margin:0 0 9px}.download-side .button{margin-top:17px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.about-copy{color:var(--muted);font-size:14px;line-height:1.9}.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{border:1px solid var(--line);border-radius:7px;padding:9px 12px;color:#b8c7ce;font:11px var(--mono);background:#ffffff04}
+.contact{border:1px solid #7cf7c533;border-radius:14px;padding:34px;background:linear-gradient(110deg,#11221e,#101720);display:flex;align-items:center;justify-content:space-between;gap:25px}.contact h2{font-size:28px;letter-spacing:-1px;margin:8px 0}.contact p{color:var(--muted);font-size:12px;margin:0}
+footer{padding:28px 0;border-top:1px solid #ffffff10;color:#687984;font:10px var(--mono);display:flex;justify-content:space-between}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:45px;padding:70px 0}.terminal{max-width:560px;width:100%;transform:none}.projects{grid-template-columns:1fr 1fr}.downloads{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:22px}.hero{min-height:auto}nav{gap:15px}}
+@media(max-width:560px){.wrap{width:min(100% - 30px,1120px)}header{height:68px}nav{display:none}.hero{padding:60px 0}.hero h1{letter-spacing:-2.5px}.meta{gap:12px;flex-wrap:wrap}.projects{grid-template-columns:1fr}.section-head{align-items:start;gap:10px;flex-direction:column}.section-head h2{font-size:29px}.download-main{align-items:flex-start;flex-direction:column}.contact{align-items:flex-start;flex-direction:column}footer{gap:12px;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#">zZeer<span style="color:var(--mint)">0</span>xxce<b>.</b></a>
+  <nav><a href="#projects">Проекты</a><a href="#downloads">Загрузки</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav>
+  <a class="nav-cta" href="#contact">Связаться <span>↗</span></a>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow"><i class="dot"></i> developer portfolio / 2026</div>
+    <h1>Пишу код.<br>Создаю <span>идеи.</span></h1>
+    <p class="lead">Разрабатываю приложения, экспериментирую с технологиями и превращаю интересные идеи в работающие проекты. Здесь — мои работы, инструменты и то, чем хочется поделиться.</p>
+    <div class="hero-actions"><a class="button primary" href="#projects">Смотреть проекты <span>↓</span></a><a class="button secondary" href="#downloads">Мои загрузки <span>↗</span></a></div>
+    <div class="meta"><span>Программирование</span><span>Приложения</span><span>Эксперименты</span></div>
+  </div>
+  <div class="terminal">
+    <div class="term-top"><i class="traffic"></i><i class="traffic"></i><i class="traffic"></i><span class="term-title">developer@portfolio:~</span></div>
+    <div class="term-body">
+      <div><span class="prompt">➜</span> <span class="code-blue">whoami</span></div>
+      <div class="code-white">zZeer0xxce</div><br>
+      <div><span class="prompt">➜</span> <span class="code-blue">cat</span> about.json</div>
+      <div>{</div>
+      <div>&nbsp;&nbsp;<span class="prompt">"role"</span>: <span class="code-white">"Developer"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="prompt">"focus"</span>: <span class="code-white">["Apps", "Code", "UI"]</span>,</div>
+      <div>&nbsp;&nbsp;<span class="prompt">"status"</span>: <span class="code-white">"Building something cool"</span></div>
+      <div>}</div><br>
+      <div><span class="prompt">➜</span> <span class="code-blue">echo</span> "Let's build something."</div>
+      <div class="code-white">Let's build something. <i class="cursor"></i></div>
+    </div>
+    <div class="term-status"><span>UTF-8</span><span>MAIN BRANCH ●</span><span>READY</span></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-head"><div><div class="kicker">01 / SELECTED WORK</div><h2>Мои проекты</h2></div><div class="section-note">Идеи, над которыми я работаю</div></div>
+  <div class="projects">
+    <article class="project" style="--glow:#7cf7c5">
+      <div class="project-top"><div class="project-icon">✳</div><span class="status">IN DEVELOPMENT</span></div>
+      <h3>PhytoTick</h3><p>Мобильное приложение для распознавания комнатных растений и удобного ухода за ними: каталог, напоминания и дневник.</p>
+      <div class="tags"><span>Kotlin</span><span>Android</span><span>API</span></div>
+      <a class="project-link" href="#contact">Подробнее — скоро ↗</a>
+    </article>
+    <article class="project" style="--glow:#70d9f4">
+      <div class="project-top"><div class="project-icon">▣</div><span class="status planned">EXPERIMENT</span></div>
+      <h3>GamesCal</h3><p>Android-приложение с каталогом игр, сортировкой и работой с внешним игровым API.</p>
+      <div class="tags"><span>Kotlin</span><span>Retrofit</span><span>MVVM</span></div>
+      <a class="project-link" href="#contact">Подробнее — скоро ↗</a>
+    </article>
+    <article class="project" style="--glow:#b39cff">
+      <div class="project-top"><div class="project-icon">⌘</div><span class="status">IN DEVELOPMENT</span></div>
+      <h3>DevToolbox</h3><p>Набор инструментов для разработчика: быстрые действия, JSON, Base64, цвета и полезные мелочи.</p>
+      <div class="tags"><span>C#</span><span>Avalonia</span><span>.NET</span></div>
+      <a class="project-link" href="#contact">Подробнее — скоро ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="section-head"><div><div class="kicker">02 / DOWNLOAD CENTER</div><h2>Загрузки</h2></div><div class="section-note">Файлы и полезные инструменты</div></div>
+  <div class="downloads">
+    <div class="download-main"><div><div class="kicker">COMING SOON</div><h3>Здесь будут мои релизы</h3><p>Готовые приложения, небольшие утилиты, исходный код и другие файлы для скачивания.</p></div><span class="project-icon" style="width:58px;height:58px;font-size:24px">↓</span></div>
+    <div class="download-side"><h3>Хочешь посмотреть исходники?</h3><p>Добавлю ссылки на GitHub, когда подготовлю публичные репозитории.</p><a class="button secondary" href="#contact">Запросить проект ↗</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head"><div><div class="kicker">03 / ABOUT</div><h2>Немного обо мне</h2></div></div>
+  <div class="about-grid">
+    <p class="about-copy">Мне нравится разбираться, как устроены приложения, пробовать новые технологии и собирать собственные проекты — от идеи и интерфейса до логики и интеграций. Этот сайт будет постепенно пополняться новыми работами и релизами.</p>
+    <div><div class="kicker" style="margin-bottom:14px">TECH STACK / INTERESTS</div><div class="skills"><span class="skill">Python</span><span class="skill">C</span><span class="skill">C#</span><span class="skill">Kotlin</span><span class="skill">.NET</span><span class="skill">Avalonia</span><span class="skill">Android</span><span class="skill">REST API</span><span class="skill">SQL</span><span class="skill">UI / UX</span></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact"><div><div class="kicker">04 / GET IN TOUCH</div><h2>Есть идея? Давай обсудим.</h2><p>Открыт к общению, вопросам и интересным предложениям.</p></div><a class="project-link" href="https://t.me/YourBotName" target="_blank">Открыть бота ↗</a></div>
+</section>
+</main>
+<footer><span>© 2026 zZeer0xxce. Built with curiosity.</span><span>DESIGNED & DEVELOPED BY ME</span></footer>
+</div>
+</body>
+</html>
